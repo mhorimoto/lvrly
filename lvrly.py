@@ -10,7 +10,7 @@ import subprocess
 import netifaces
 import urllib.request
 
-url = "http://www-ampsd.bpes.kyushu-u.ac.jp/aso15/api/insert_lvrly.php" 
+url = "https://hoge.hoge.org/insert_lvrly.php" 
 hwa = netifaces.ifaddresses('eth0')[netifaces.AF_PACKET][0]['addr']
 
 target = {}

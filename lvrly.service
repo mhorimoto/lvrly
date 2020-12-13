@@ -1,0 +1,12 @@
+[Unit]
+Description = A Live Checker
+After = rc-local.service
+
+[Service]
+ExecStart = /usr/local/bin/lvrly.py
+Restart = always
+Type = simple
+
+[Install]
+WantedBy = multi-user.target
+

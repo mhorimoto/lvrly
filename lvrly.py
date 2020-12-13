@@ -22,6 +22,8 @@ with open('/usr/local/etc/lvrly.ini',newline='') as csvf:
     for row in lvr:
         if (row[0]=="QRA"):
             thisis = row[1]
+        elif (row[0]=="QSY"):
+            url = row[1]
         else:
             target[row[0]] = row[1]
 #            print("IP={0}  HOSTNAME={1}".format(row[0],row[1]))

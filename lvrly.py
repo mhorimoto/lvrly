@@ -51,11 +51,13 @@ while True:
             }
             presult[k] = a.returncode
             c = urllib.parse.urlencode(params)
-#            print(c)
+            print(c)
             req = urllib.request.Request('{}?{}'.format(url,c))
-            with urllib.request.urlopen(req) as res:
-                body = res.read()
-#                print(body)
+            try:
+                with urllib.request.urlopen(req) as res:
+                    body = res.read()
+            except urllib.error.URLError:
+                print("{0} == {1}".format(time.time(),body))
         cnt[k] = cnt[k] + 1
         if cnt[k]>60:
             cnt[k] = 0
@@ -68,10 +70,12 @@ while True:
                 "C":a.returncode
             }
             c = urllib.parse.urlencode(params)
-#           print(c)
+            print(c)
             req = urllib.request.Request('{}?{}'.format(url,c))
-            with urllib.request.urlopen(req) as res:
-                body = res.read()
-#                print(body)
+            try:
+                with urllib.request.urlopen(req) as res:
+                    body = res.read()
+            except urllib.error.URLError:
+                print("{0} == {1}".format(time.time(),body))
     time.sleep(1)
 
